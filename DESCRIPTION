@@ -1,7 +1,7 @@
 Package: SLStatsExplainedBasic
 Type: Package
 Title: SLStatsExplainedBasic
-Version: 0.1
+Version: 1.0
 Encoding: UTF-8
 Authors@R: person("Sebastian",
                  "Lotjärn",
