@@ -1,0 +1,14 @@
+Package: SLStatsExplainedBasic
+Type: Package
+Title: SLStatsExplainedBasic
+Version: 0.1
+Encoding: UTF-8
+Authors@R: person("Sebastian",
+                 "Lotjärn",
+                 email="sebastian.lotjarn@gmail.com",
+                 role=c("aut",
+                        "cre"))
+Description: Briefly explains statistical concepts and assumptions needed for basic statistical tests. Assists with setting them up.
+Config/roxygen2/version: 8.1.0
+License: MIT + file LICENSE
+
