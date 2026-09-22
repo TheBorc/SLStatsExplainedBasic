@@ -1,8 +1,7 @@
-#' Explain t-test
+#' Explain Shapiro Wilks Normality test
 #'
-#' Prints and explenation of t-tests, it's definition,
-#' interpretation, some misconceptions, and connection to hypothesis testing
-#' Includes assumptions, examples and setup
+#' Prints and explenation of Shapiro Wilks, it's definition,
+#' interpretation, examples and setup
 #'
 #' @return Invisibly returns NULL.
 #' @export
