@@ -63,4 +63,6 @@ SLExplain.shapirowilks = function() {
   The p-value returned at 0.8649, which is above 0.05, thus we can 
   retain the H0, which in this case means that we retain the 
   assumption that our data is normally distributed.')
+  
+  invisible(NULL)
 }

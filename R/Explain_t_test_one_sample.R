@@ -95,7 +95,7 @@ SLExplain.t_test_one_sample = function() {
   HIGHER:
   
   t.test(x,
-         my=165,
+         mu=165,
          alternative="greater") #This checks if the value is greater
          
     One Sample t-test
@@ -113,5 +113,5 @@ SLExplain.t_test_one_sample = function() {
   None of the tests could identify a significant difference in the
   heigh of the samples when compared to H0 (165cm)
       ')
-  invisible=(NULL)
+  invisible(NULL)
 }
