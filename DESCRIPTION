@@ -11,4 +11,3 @@ Authors@R: person("Sebastian",
 Description: Briefly explains statistical concepts and assumptions needed for basic statistical tests. Assists with setting them up.
 Config/roxygen2/version: 8.1.0
 License: MIT + file LICENSE
-
