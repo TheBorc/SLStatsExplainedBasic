@@ -17,54 +17,71 @@ SLExplain.mcnemar = function() {
                     WHY DO WE USE MCNEMARS TEST?
 ----------------------------------------------------------------------
 
-  We use this test when we want to controll if data collected is
-  different from an expected distribution. This could be gonetype
-  studies or comparing car colors seen on the street to the colors
-  sold in car dealerships.
+  We use this test when we want to study paired data and nominal data
+  This could be to control how same individuals responds to different
+  drugs, or investigate how the same individuals perform on exams
+  using different methods of studying.
 
 ----------------------------------------------------------------------
                                 SETUP
 ----------------------------------------------------------------------
   
-  x=matrix(c(),             #Setting up the table
-           nrow=,
-           byrow=TRUE)      #This fills the table horizontally
-                            # -> ->, if FALSE, it fills vertical
+  my_table=matrix(c(),           #Setting up the table
+                  nrow=,
+                  byrow=TRUE)    #This fills the table horizontally
+                                 # -> ->, if FALSE, it fills vertical
                             
+  rownames(my_table)=c()          #Adding rownames
+  colnames(my_table)=c()          #Adding column names
   
+  mcnemar.test(my_table)
   
 ----------------------------------------------------------------------
                               EXAMPLE
 ----------------------------------------------------------------------
 
-  We have studied cars driving by the street and noted down the color
-  of each one, we have also pulled numbers of sold cars and their 
-  respective color and should observe the same porportions on the
-  streets as the ones sold in stores.
+  We have developed two methods of studying and recruited 50
+  individuals to evaluate the methods. They were given 2 seperate but
+  similar examss and applied Method A of studying for one exam and
+  Method B to study for the other exam. The criteria is Pass or Fail.
   
-  x=c(32, #Black These values are the ones noted on the street.
-      27, #White 
-      21, #Gray
-      12, #Blue
-      8)  #Red
-      
-  y=c(28, #These values are the ones sold at dealershio
-      30, #Same order as above
-      22,
-      12,
-      8)
-      
-  chisq.test(x,
-             p=y/sum(y))
-             
-  	Chi-squared test for given probabilities
+  my_table=matrix(c(20,
+                    12,
+                    6,
+                    12),           #Setting up the table
+                    nrow=2,        #Two rows in the table
+                    byrow=TRUE)    #This fills the table horizontally
+                                # -> ->, if FALSE, it fills vertical
 
-  data:  x
-  X-squared = 0.91688, df = 4, p-value = 0.9221
+  rownames(my_table)=c("Method A: Pass", 
+                       "Method A: Fail")   #Adding rownames
+  colnames(my_table)=c("Method B: Pass",
+                       "Method B: Fail")   #Adding column names
+
+  mcnemar.test(my_table)
+      
+  McNemars Chi-squared test with continuity correction
+      
+      data:  my_table
+      McNemars chi-squared = 1.3889, df = 1, p-value = 0.2386
+      
+      
   
-  The test showed a p-value > 0.05, we do not reject H0 and we can
-  assume that the expected distribution of car colors sold is the
-  the same distibution seen in the streets.')
+  We see that we get a p-value > 0.05 and we ratain H0, the two
+  methods developed appears to perform similarly to each other
+  when analysed using McNemars test.
+  
+  It is always good to control a table before trusting any tests.
+  Simply write:
+  
+  my_table
+  
+                 Method B: Pass Method B: Fail
+  Method A: Pass             20             12
+  Method A: Fail              6             12
+  
+  This looks like the data we noted down and the test can be trusted.
+')
   
   invisible(NULL)
 }
