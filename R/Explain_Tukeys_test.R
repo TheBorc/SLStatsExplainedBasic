@@ -28,7 +28,8 @@ SLExplain.tukeys = function() {
   Since this is a post-hoc we rely in previously recorded data.
   In this setup we use the data from SLExplain.ANOVA_one_way().
   
-  TukeyHSD(One-way ANOVA test)
+  TukeyHSD(aov(x~y,            
+               data=df))
   
 ----------------------------------------------------------------------
                                EXAMPLE
@@ -44,7 +45,7 @@ SLExplain.tukeys = function() {
   difference occurs.
   
   TukeyHSD(aov(x~y,
-              data=df))
+               data=df))
               
     Tukey multiple comparisons of means
     95% family-wise confidence level
