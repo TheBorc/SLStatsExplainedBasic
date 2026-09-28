@@ -31,7 +31,7 @@ SLExplain.t_test_pairwise = function() {
   
   pairwise.t.test(x,
                   y,
-                  paired=TRUE
+                  paired=TRUE,
                   p.adjust.method="none",
                   data=df)
   
@@ -53,7 +53,7 @@ SLExplain.t_test_pairwise = function() {
   
   pairwise.t.test(x,
                   y,
-                  paired=TRUE
+                  paired=TRUE,
                   p.adjust.method="none",
                   data=df)
                   
