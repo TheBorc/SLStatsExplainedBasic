@@ -153,10 +153,13 @@ SLExplain.Spearman = function() {
   have a relationship without having an effect on each other. In this
   example we used reading scores and height, which seems to have
   a positive correlation, however, the correlation is mostly driven
-  by another variable, age.
+  by another variable, age, which affects both height and reding 
+  scores.
   
-  This is what we call a confounding effect and it is very important
-  to take these into consideration when interpreting correlations.
+  Age is what we call a confounding effect in our analysisand it is 
+  very important to take these into consideration when interpreting 
+  correlations.
+      
       
       ')
   
