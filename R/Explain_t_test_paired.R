@@ -1,6 +1,6 @@
 #' Explain Paired sample t-test
 #'
-#' Prints and explenation of Paired sample t-test, it's definition,
+#' Prints an explanation of Paired sample t-test, it's definition,
 #' interpretation, examples and setup
 #'
 #' @return Invisibly returns NULL.
@@ -17,8 +17,8 @@ SLExplain.t_test_paired = function() {
                 WHY DO WE USE PAIRED SAMPLE T-TEST?
 ----------------------------------------------------------------------
 
-  We use this test when we have two sets of paired measurements,
-  this can be before and after treatments, or if we have matching
+  We use this test when we have two sets of paired measurements.
+  This can be before and after treatments, or if we have matching
   pairs of individuals with similar characteristics, such as age,
   location or occupation.
 
@@ -31,6 +31,7 @@ SLExplain.t_test_paired = function() {
   y=c()             #Creating the second vector
   
   shapiro.test(x-y) #Controls for normality before using t.test
+                    #Note that we check difference
   
   t.test(x,         #Testing x against y as paired measurements
          y,
@@ -46,7 +47,7 @@ SLExplain.t_test_paired = function() {
 ----------------------------------------------------------------------
 
   Measuring the CRP levels before and after antibiotic treatment of
-  ten seperate individuals.
+  ten separate individuals.
   
   x=c(126,         #Creating the before CRP concentration vector
       89,
@@ -77,9 +78,9 @@ SLExplain.t_test_paired = function() {
   data:  x - y
   W = 0.98052, p-value = 0.967
 
-  The difference in the values before and after treamtent can be
-  assumed normaly distributed as Shapiro-Wilks returned a p-value
-  of 0.967.
+  The difference in the values before and after treatment can be
+  assumed to be normally distributed as Shapiro-Wilk returned a 
+  p-value of 0.967.
 
 
   t.test(x,         #Testing x against y as paired measurements
@@ -97,9 +98,9 @@ SLExplain.t_test_paired = function() {
   mean difference 
              79.9 
       
-  The t-test returned a p-value < 0.001 which is a very highly
-  significant difference in CRP levels before and after treatment 
-  with antibiotics')
+  The t-test returned a p-value < 0.001 which is a  highly
+  statistically significant difference in CRP levels before and 
+  after treatment with antibiotics')
   
   invisible(NULL)
 }

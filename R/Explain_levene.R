@@ -1,6 +1,6 @@
 #' Explain Levenes test
 #'
-#' Prints and explenation of Levenes, it's definition,
+#' Prints and explanation of Levenes, it's definition,
 #' interpretation, examples and setup
 #'
 #' @return Invisibly returns NULL.
@@ -10,11 +10,11 @@
 SLExplain.levene = function() {
   cat('
 ======================================================================
-                          LEVENES TEST
+                            LEVENES TEST
 ======================================================================
 
 ----------------------------------------------------------------------
-                  WHY DO WE USE LEVENES TEST?
+                    WHY DO WE USE LEVENES TEST?
 ----------------------------------------------------------------------
 
   If we wish to see if two groups have similar variance. We use this
@@ -34,7 +34,7 @@ SLExplain.levene = function() {
   leveneTest(x~y,   #Compare x with y
              center=mean)
   
-  This setup allows to control the vector x, against the groups
+  This setup allows us to control the vector x, against the groups
   created in variable y. It is common to use data frames however, the
   setup will be slightly different.
   
@@ -58,7 +58,7 @@ SLExplain.levene = function() {
                               EXAMPLE
 ----------------------------------------------------------------------
 
-  Measuring the height of 5 women and 5 men, after gather the data
+  Measuring the height of 5 women and 5 men, after gathering the data
   we control for equal variance between the two groups.
   
   library("car")
@@ -98,7 +98,7 @@ SLExplain.levene = function() {
       
       
       
-  This can be done with dataframe and shortening our group command:
+  This can be done with a dataframe and shortening our group command:
       
   library("car")
 
@@ -128,7 +128,7 @@ SLExplain.levene = function() {
       group  1  0.2498 0.6307
       8      
       
-  The result is exactly the same, but the code is more campact.')
+  The result is exactly the same, but the code is more compact.')
   
   invisible(NULL)
 }

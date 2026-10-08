@@ -18,9 +18,9 @@ SLExplain.wilcoxon = function() {
 ----------------------------------------------------------------------
 
   Wilcoxon can be used as a non-parametric version of the one-sample
-  t-test. It will focus with the median as a center instead of mean
+  t-test. It will focus on the median as a center instead of the mean
   and can be used to investigate if the median is significantly
-  different from a chosen cut off value, or the hypothesized median.
+  different from a chosen cutoff value, or the hypothesized median.
   
   Non-parametric tests are used when the sample does not have a 
   normal distribution or when outliers affect normality but cannot
@@ -30,8 +30,9 @@ SLExplain.wilcoxon = function() {
                                 SETUP
 ----------------------------------------------------------------------
   
-  As this is a non parametric test, always control your data with
-  a normality test such as shapiro.test(), unless the data is ordinal.
+  As this is a non-parametric test, always check your data with
+  a normality test such as shapiro.test() when needed, unless the data 
+  is ordinal.
   
   x=c()
   
@@ -42,7 +43,7 @@ SLExplain.wilcoxon = function() {
               exact=FALSE,      #Use an approximate p-value
               correct=FALSE)    #No continuity correction
   
-  Going into approximation of the p-value instead of exact and why
+  Explaining the approximation of the p-value instead of exact and why
   we do not apply continuity correction to the data is beyond the
   scope of this basic tutorial.
   
@@ -51,9 +52,9 @@ SLExplain.wilcoxon = function() {
 ----------------------------------------------------------------------
 
   We want to investigate if the waiting times at a clinic which uses
-  a slightly different system is different from other clinics. We
-  collect data by recording when a patient arrive and when the nurse
-  calls their number in minutes.
+  a slightly different system differs from other clinics. We collect
+  data by recording when a patient arrives and when the nurse calls 
+  their number in minutes.
   
   x=c(10,
       16,
@@ -71,7 +72,7 @@ SLExplain.wilcoxon = function() {
       59,
       69)
       
-  shpiro.test(x)
+  shapiro.test(x)
   
     	Shapiro-Wilk normality test
 
@@ -83,7 +84,7 @@ SLExplain.wilcoxon = function() {
   
   
   wilcox.test(x,
-              mu=30,
+              mu=30,        #Average waiting time in other clinics
               exact=FALSE,
               correct=FALSE)
 
@@ -93,8 +94,8 @@ SLExplain.wilcoxon = function() {
   V = 55.5, p-value = 0.7982
   alternative hypothesis: true location is not equal to 30
   
-  The sample showed a p-values > 0.05 and we retain H0, the
-  waiting times does not seem to be different using the
+  The sample showed a p-value > 0.05 and we retain H0, the
+  waiting times do not seem to be different using the
   system at the clinic.
   
       ')

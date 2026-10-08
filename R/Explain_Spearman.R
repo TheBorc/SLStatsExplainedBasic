@@ -48,7 +48,7 @@ SLExplain.Spearman = function() {
 ----------------------------------------------------------------------
 
   We want to investigate the relationship between height and 
-  reading score. When the data is collected  and analysed we chose 
+  reading score. When the data is collected and analysed we chose 
   to use spearmans correlation to investigate a relationship
   as the assumptions for pearsons were not met during analysis.
 
@@ -108,8 +108,11 @@ SLExplain.Spearman = function() {
   data:  cbind(x, y)
   MVW = 0.83483, p-value = 0.001375
   
+  The p-value is < 0.05, we should not be using Pearson. Instead,
+  we look into using Spearman and check relationships and outliers.
   
-  LINEAR RELATIONSHIP & STRONG OUTLIERS:
+  
+  MONOTONIC RELATIONSHIP & STRONG OUTLIERS:
   plot(x~y,
        data=df)
        
@@ -142,8 +145,8 @@ SLExplain.Spearman = function() {
   From the Spearman correlation we get a p < 0.05, we reject H0,
   there is a relationship between height and reading score.
   The correlation coefficient is referred to as rho in the output, 
-  the test gave a rho value of 0.93 which indicates a  positive 
-  relationship between height and reading score.
+  the test gave a rho value of 0.93 which indicates a strong positive 
+  monotonic relationship between height and reading score.
   
 ----------------------------------------------------------------------
                               IMPORTANT
@@ -151,14 +154,14 @@ SLExplain.Spearman = function() {
 
   Note that correlation does not mean causation. Two variables can
   have a relationship without having an effect on each other. In this
-  example we used reading scores and height, which seems to have
+  example we used reading scores and height, which seem to have
   a positive correlation, however, the correlation is mostly driven
-  by another variable, age, which affects both height and reding 
+  by another variable, age, which affects both height and reading 
   scores.
   
-  Age is what we call a confounding effect in our analysisand it is 
-  very important to take these into consideration when interpreting 
-  correlations.
+  Age is what we call a confounding variable in our analysis and it 
+  is very important to take confounders into consideration when 
+  interpreting correlations.
       
       
       ')

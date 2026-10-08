@@ -27,17 +27,19 @@ SLExplain.sign_test = function() {
   Paired t-test
   
   Non-normally distributed differences, symmetrical: 
-  Wilcoxon signed rank test
+  Wilcoxon signed-rank test
   
-  Non-normally distributed differences, non symmetrical:
+  Non-normally distributed differences, asymmetrical:
   Sign test
   
 ----------------------------------------------------------------------
                                 SETUP
 ----------------------------------------------------------------------
   
-  As this is a non parametric test, always control your data with
-  a normality test such as shapiro.test(), unless the data is ordinal.
+  As this is a non-parametric test, always control your data with
+  a normality test such as shapiro.test() when needed, unless the 
+  data is ordinal. In a paired setting we control the normality of 
+  the difference between the measurements.
   
   
   x=c()                             #First measurement                         
@@ -46,11 +48,11 @@ SLExplain.sign_test = function() {
   
   positive_results=sum(y-x > 0)     #Sum all positive differences
   
-  non_zero_results=sum(y-x != 0)    #Sum all differences that is not 0
+  non_zero_results=sum(y-x != 0)    #Sum all differences that are not 0
   
   binom.test(positive_results,      #Sign test uses the number of
              non_zero_results)      #positive results and compares
-                                    #with all results that is not 0
+                                    #with all results that are not 0
   
   
 ----------------------------------------------------------------------
@@ -65,7 +67,7 @@ SLExplain.sign_test = function() {
  The differences seem to be non-normally distributed and there is 
  no symmetry observed when checking with hist().
  
-  x=c(240,                            #8-hours of sleep
+  x=c(240,                            #8 hours of sleep
       255,
       230,
       265,
@@ -74,7 +76,7 @@ SLExplain.sign_test = function() {
       260,
       235)                                                       
 
-  y=c(252,                            #5-hours of sleep
+  y=c(252,                            #5 hours of sleep
       269,
       241,
       281,
@@ -102,14 +104,16 @@ SLExplain.sign_test = function() {
                     0.75 
   
   
-  We see that we got a p-value > 0.05 and we do not reject H0. Those
+  We see that we got a p-value > 0.05 and we do not reject H0, there
+  is not enough evidence to detect a difference in the results on
+  reaction times betwen 5 hours of sleep and 8 hours of sleep. Those
   with keen eyes might notice that the CI is between 0.35 and 0.97,
-  this does not include 0 but yet we do not reject H0.
+  this does not include 0, yet we do not reject H0.
   
-  An important part about binom.test() is that it uses p=0.5 as
-  default, and since 0.35 and 0.97 includes 0.5, we do not reject H0. 
-  This can be changed by adding another p value as an argument inside 
-  the function.
+  An important part about binom.test() is that it uses p=0.5 by
+  default, and since the interval between 0.35 and 0.97 includes 0.5, 
+  we do not reject H0. This can be changed by adding another p 
+  as an argument inside the function.
       ')
   
   invisible(NULL)

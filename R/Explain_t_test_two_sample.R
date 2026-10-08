@@ -1,6 +1,6 @@
 #' Explain Independent two-sample t-test
 #'
-#' Prints and explenation of two-sample t-test, it's definition,
+#' Prints an explanation of two-sample t-test, it's definition,
 #' interpretation, examples and setup
 #'
 #' @return Invisibly returns NULL.
@@ -19,7 +19,7 @@ SLExplain.t_test_two_sample = function() {
 
   We use this test when we wish to see if means between two groups
   are significantly different. For example, if we wish to compare
-  blood preassure from a treament or placebo group, or height between
+  blood pressure from a treatment or placebo group, or height between
   women and men.
 
 ----------------------------------------------------------------------
@@ -33,8 +33,8 @@ SLExplain.t_test_two_sample = function() {
   t.test(x~y,       #Test x against y
          var.equal=TRUE)       #We have equal variance
   
-  This setup allows to control the vector x, against the groups
-  created in variable y. It is common to use data frames however, the
+  This setup allows to compare the vector x, against the groups
+  created in variable y. It is common to use data frames, however, the
   setup will be slightly different.
   
   
@@ -48,15 +48,15 @@ SLExplain.t_test_two_sample = function() {
                 y)
   
   t.test(x~y,
-         data=df    #It will look for x and y in variable df
+         data=df,          #It will look for x and y in variable df
          var.equal=TRUE)   #We have equal variance 
 ----------------------------------------------------------------------
                               EXAMPLE
 ----------------------------------------------------------------------
 
-  Measuring the height of 5 women and 5 men, after normality in
-  variance between the groups has been established we wish to compare
-  them and see if there is a significant difference.
+  Measuring the height of 5 women and 5 men, after normality and
+  equal variance between the groups has been established we wish to 
+  compare them and see if there is a significant difference.
   
   x=c(174,        #Creating the vector
       183,
@@ -101,7 +101,7 @@ SLExplain.t_test_two_sample = function() {
       
       
       
-  This can be done with dataframe and shortening our group command:
+  This can be done with a data frame and shortening our group command:
 
 
   x=c(174,                    #Creating the vector
@@ -137,7 +137,7 @@ SLExplain.t_test_two_sample = function() {
   mean in group F mean in group M   
             163.2           181.0  
       
-  The result is exactly the same, but the code is more campact.
+  The result is exactly the same, but the code is more compact.
       
   
   t.test() uses Welch Two Sample t-test by default, thus we

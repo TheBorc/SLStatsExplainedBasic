@@ -1,8 +1,7 @@
-#' Explain t-test
+#' Explain one-sample t-test
 #'
-#' Prints and explenation of t-tests, it's definition,
-#' interpretation, some misconceptions, and connection to hypothesis testing
-#' Includes assumptions, examples and setup
+#' Prints an explanation of one-sample t-test, it's definition,
+#' interpretation, examples and setup
 #'
 #' @return Invisibly returns NULL.
 #' @export
@@ -10,18 +9,21 @@
 SLExplain.t_test_one_sample = function() {
   cat('
 ======================================================================
-                          ONE SAMPLE T-TEST 
+                          ONE-SAMPLE T-TEST 
 ======================================================================
 
 ----------------------------------------------------------------------
-                  WHEN DO WE USE ONE SAMPLE T-TEST?
+                  WHEN DO WE USE ONE-SAMPLE T-TEST?
 ----------------------------------------------------------------------
 
-  One sample t-test is used when we want to compare our sample to a
-  manually chosen cutoff. This could be for example when we know that
-  a blood preassure above 140 is an indicator of hypertension and you
-  want to control your sample against that value.
+  One-sample t-test is used when we want to compare our sample to a
+  manually chosen cutoff. This could be for example that we want to
+  check if a group has a different blood pressure mean or perhaps
+  height than a hypothesised mean value of the population. You can
+  also check if the mean is specifically lower or greater than the
+  hypothesised population mean.
   
+  In short:
   To see if your sample has a significantly different mean value than
   your chosen cutoff.
 
@@ -41,7 +43,8 @@ SLExplain.t_test_one_sample = function() {
                               EXAMPLE
 ----------------------------------------------------------------------
 
-  Measuring the height of 8 different people. H0 is 165 cm.
+  Measuring the height of 8 different people. The population mean is
+  hypthesised to be 165 cm.
   
   x=c(163,
       169,
@@ -70,8 +73,8 @@ SLExplain.t_test_one_sample = function() {
          
          
   
-  We can also check for one sided tests, to see if the change is
-  higher or lower than cutoff.
+  We can also check for one-sided tests, to see if the change is
+  higher or lower than the chosen cutoff.
  
   
   LOWER:
@@ -111,7 +114,7 @@ SLExplain.t_test_one_sample = function() {
     
   
   None of the tests could identify a significant difference in the
-  heigh of the samples when compared to H0 (165cm)
+  mean height of the sample when compared to H0 (165 cm)
       ')
   invisible(NULL)
 }

@@ -1,6 +1,6 @@
-#' Explain Shapiro Wilks Normality test
+#' Explain Shapiro-Wilk Normality test
 #'
-#' Prints and explenation of Shapiro Wilks, it's definition,
+#' Prints an explanation of Shapiro-Wilk, it's definition,
 #' interpretation, examples and setup
 #'
 #' @return Invisibly returns NULL.
@@ -10,7 +10,7 @@
 SLExplain.shapirowilks = function() {
   cat('
 ======================================================================
-                          SHAPIRO WILKS
+                          SHAPIRO-WILK
 ======================================================================
 
 ----------------------------------------------------------------------
@@ -18,11 +18,13 @@ SLExplain.shapirowilks = function() {
 ----------------------------------------------------------------------
 
   Parametric tests rely on the data being normally distributed as an
-  assumption for reliable analysis. Shapiro-Wilks normality test can
-  be used on data to confirm normality or non-normality.
+  assumption for reliable analysis. The Shapiro-Wilk normality test 
+  can be used on data to check for normality or non-normality.
   
-  If a test from Shapiro-Wilks has a p-value > 0.05, the samples can
-  be considered normally distributed.
+  If a test from Shapiro-Wilk has a p-value > 0.05, the samples can
+  be considered normally distributed, or more accurately, we do not
+  have enough evidence to reject H0 which states that it is normally
+  distributed.
 
 ----------------------------------------------------------------------
                                 SETUP
@@ -33,7 +35,8 @@ SLExplain.shapirowilks = function() {
   shapiro.test(x)   #The test controls one vector at a time
   
   This setup allows control of one vector at a time, if there are
-  more vectors, simply exchange the vector tested in shapiro.wilks().
+  more vectors, simply exchange the vector tested in shapiro.test()
+  for each vector and run them separately.
          
 ----------------------------------------------------------------------
                               EXAMPLE
@@ -59,7 +62,7 @@ SLExplain.shapirowilks = function() {
   data:  x
   W = 0.966, p-value = 0.8649
       
-  The p-value returned at 0.8649, which is above 0.05, thus we can 
+  The p-value is 0.8649, which is above 0.05, thus we can 
   retain the H0, which in this case means that we retain the 
   assumption that our data is normally distributed.')
   

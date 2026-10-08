@@ -18,7 +18,7 @@ SLExplain.chi_square_goodness = function() {
 ----------------------------------------------------------------------
 
   We use this test when we want to determine if data collected is
-  different from an expected distribution. This could be gonetype
+  different from an expected distribution. This could be genotype
   studies or comparing car colors seen on the street to the colors
   sold in car dealerships.
 
@@ -42,7 +42,7 @@ SLExplain.chi_square_goodness = function() {
 
   We have studied cars driving by the street and noted down the color
   of each one, we have also pulled numbers of sold cars and their 
-  respective color and should observe the same poroportions on the
+  respective colors and should observe the same proportions on the
   streets as the ones sold in stores.
   
   x=c(32, #Black These values are the ones noted on the street.

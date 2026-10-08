@@ -47,9 +47,9 @@ SLExplain.Friedmans = function() {
                                EXAMPLE
 ----------------------------------------------------------------------
 
-  We want to investigate the effect of different intensity of training
-  has on the heart-rate of 8 individuals. The data observed was
-  non-normally distributed and we chose to use Friedmans test for
+  We want to investigate the effect of different intensities of 
+  training has on the heart-rate of 8 individuals. The data observed 
+  was non-normally distributed and we chose to use Friedmans test for
   the analysis.
 
   
@@ -123,7 +123,7 @@ SLExplain.Friedmans = function() {
 
   P value adjustment method: bonferroni 
   
-  The p-value < 0.05 for each intensity compared to the others. We
+  The p-value is < 0.05 for each intensity compared to the others. We
   reject H0 for each pair, this gives evidence that each intensity
   gives a significantly different heart-rate compared to each other.
   
@@ -135,7 +135,7 @@ SLExplain.Friedmans = function() {
   counterparts. In this example the 0.025 derives from the ranking of 
   change between subjects and the conditions, thus, the amount of 
   change is not recorded. This is why we get a 0.025 p-value between 
-  low and high intensity, just as we get when we compare with medium..
+  low and high intensity, just as we get when we compare with medium.
 
 ')
   

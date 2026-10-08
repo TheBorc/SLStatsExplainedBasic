@@ -47,7 +47,7 @@ SLExplain.Pearson = function() {
 
   We want to investigate the relationship between children age
   between 6 and 12 and reading score. When the data is collected
-  and anaysed we chose to use pearsons correlation to investigate a 
+  and analysed we chose to use pearsons correlation to investigate a 
   relationship as the assumptions for pearsons were met during analysis.
 
   
@@ -90,7 +90,7 @@ SLExplain.Pearson = function() {
                 
                 
                 
-  BEFORE CHECKING FOR CORRELATIONS WE CONTROL FOR ASUMPTIONS
+  BEFORE CHECKING FOR CORRELATIONS WE CONTROL FOR ASSUMPTIONS
   
   NORMALITY:
   library(mvShapiroTest)        
@@ -137,7 +137,7 @@ SLExplain.Pearson = function() {
       
   From the Pearsons correlation we get a p < 0.05, we reject H0,
   there is a relationship between age and reading score.
-  The r value is reffered to as cor in the output, the test gave
+  The r value is referred to as cor in the output, the test gave
   a cor value of 0.97 which indicates a strong positive relationship
   between age and reading score.
 ')

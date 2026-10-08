@@ -20,15 +20,16 @@ SLExplain.Regression_simple = function() {
   We use simple linear regression when we wish to predict values in
   a variable based on the values of another variable with a linear
   relationship. The linear relationship can be approximated between two 
-  variables, but the accuracy is affected as the r2 value decreases.
+  variables, the R2 value explains what percentage of the variance is 
+  explained by the model.
   
 ----------------------------------------------------------------------
                                 SETUP
 ----------------------------------------------------------------------
   
-  Note that there are a few assumptions to control. We will go
-  through them at the example, but the following is the most basic
-  of setups, always try to include data frames:
+  Note that linear regression concerns normality of the residuals.
+  This is not covered in this guide and has to be investigated
+  after running this setup.
   
   x=c()
   
@@ -37,20 +38,20 @@ SLExplain.Regression_simple = function() {
   df=data.frame(x,
                 y)
   
-  cor.test(x,
-           y,
-           method="spearman",    #Method defines which correlation test
-           exact=FALSE,
-           data=df)
+  summary(lm(x~y,               # Outcome ~ Predictor
+             data=df))
                                         
 ----------------------------------------------------------------------
                                EXAMPLE
 ----------------------------------------------------------------------
 
   We want to investigate the relationship between height and 
-  reading score. When the data is collected  and analysed we chose 
-  to use spearmans correlation to investigate a relationship
-  as the assumptions for pearsons were not met during analysis.
+  reading score. When the data is collected and analysed we have 
+  noted that they have a monotonic relationship. Meaning that if
+  one variable increases or decreases the other one does as well.
+  We wish to see if the model will be able to predict the reading
+  scores based on height.
+  
 
   
   x=c(42,                           #Reading scores
@@ -93,57 +94,44 @@ SLExplain.Regression_simple = function() {
                 y)
                 
                 
-                
-  BEFORE CHECKING FOR CORRELATIONS WE CONTROL FOR ASSUMPTIONS
   
-  NORMALITY:
-  library(mvShapiroTest)        
-                                #Checking multivariate normality
-  mvShapiro.Test(cbind(x,       #This needs to be a matrix
-                       y))      #Hence the cbind()
-                       
-	          Generalized Shapiro-Wilk test for Multivariate Normality 
-	          by Villasenor-Alva and Gonzalez-Estrada
+  
+  summary(lm(x~y,
+             data=df))
+             
+  Call:
+  lm(formula = x ~ y, data = df)
 
-  data:  cbind(x, y)
-  MVW = 0.83483, p-value = 0.001375
+  Residuals:
+     Min     1Q Median     3Q    Max 
+  -7.291 -4.882 -2.394  4.709 13.812 
+
+  Coefficients: 
+              Estimate Std. Error t value Pr(>|t|)    
+  (Intercept) -78.5339    22.3502  -3.514  0.00381 ** 
+  y             0.9486     0.1481   6.404 2.33e-05 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+  Residual standard error: 6.956 on 13 degrees of freedom
+  Multiple R-squared:  0.7593,	Adjusted R-squared:  0.7408 
+  F-statistic: 41.01 on 1 and 13 DF,  p-value: 2.329e-05
   
   
-  LINEAR RELATIONSHIP & STRONG OUTLIERS:
-  plot(x~y,
-       data=df)
-       
-  abline(lm(x~y,
-            data=df))
-            
-            
-  The data seems to have a monotonic relationship, meaning that if
-  the value of one variable increases the other also increases,
-  however it is not completely linear. The multivariate normality
-  gave a p-value < 0.05, we reject H0, the data is not normally
-  distributed. We chose to use Spearmans correlation.
+  We can see on the Pr(>|t|) line that height is statistically 
+  significantly associated with reading scores. And we should be
+  able to estimate someones reading score by using their height.
+  The Adjusted R2: 0.7408 tells us that height explains 74% of the
+  variability in reading scores in our current model.
   
+  Outcome = Intercept + Predictor*Coefficient
+  Note that the values are gathered under the "Estimate" column
   
-  cor.test(x,
-           y,
-           method="spearman",
-           exact=FALSE,
-           data=df)
+  If someone is 143 cm tall, their reading score is estimated
+  to be:
   
-	Spearmans rank correlation rho
-      
-      data:  x and y
-      S = 41.61, p-value = 7.53e-07
-      alternative hypothesis: true rho is not equal to 0
-      sample estimates:
-        rho 
-      0.9256972 
-      
-  From the Spearman correlation we get a p < 0.05, we reject H0,
-  there is a relationship between height and reading score.
-  The correlation coefficient is referred to as rho in the output, 
-  the test gave a rho value of 0.93 which indicates a  positive 
-  relationship between height and reading score.
+  -78.5339 + 143*0.9486 = 57.1
+  
   
 ----------------------------------------------------------------------
                               IMPORTANT
@@ -151,14 +139,14 @@ SLExplain.Regression_simple = function() {
 
   Note that correlation does not mean causation. Two variables can
   have a relationship without having an effect on each other. In this
-  example we used reading scores and height, which seems to have
+  example we used reading scores and height, which seem to have
   a positive correlation, however, the correlation is mostly driven
-  by another variable, age, which affects both height and reding 
+  by another variable, age, which affects both height and reading 
   scores.
   
-  Age is what we call a confounding effect in our analysisand it is 
-  very important to take these into consideration when interpreting 
-  correlations.
+  Age is what we call a confounding variable in our analysis and it is 
+  very important to take confounders into consideration when 
+  interpreting correlations.
       
       ')
   

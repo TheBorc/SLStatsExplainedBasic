@@ -20,7 +20,7 @@ SLExplain.Kruskal_Wallis = function() {
   We use this test when we want to investigate differences between
   groups of three or more. This is a non-parametric alternative to
   the one-way ANOVA test. This could be the investigation of
-  different drugs on CRP levels, or how long the recover time are
+  different drugs on CRP levels, or how long the recovery time are
   for different treatments.
 
 ----------------------------------------------------------------------
@@ -47,7 +47,7 @@ SLExplain.Kruskal_Wallis = function() {
 
   We want to investigate the recovery time for patients undergoing 
   three different treatments. The data is collected in number of days
-  and and Treatment C seem to be non-normally distributed. We chose
+  and Treatment C seems to be non-normally distributed. We chose
   to analyze with Kruskal-Wallis test.
 
   
@@ -67,7 +67,7 @@ SLExplain.Kruskal_Wallis = function() {
       11,
       11,
       12,
-      10,     #Treamtent C
+      10,     #Treatmtent C
       10,
       10,
       10,

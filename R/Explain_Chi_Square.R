@@ -18,7 +18,7 @@ SLExplain.chi_square = function() {
 ----------------------------------------------------------------------
 
   We use this test when we want to test associations and differences 
-  of two variables that is nominal or ordinal. For example to see if 
+  of two variables that are nominal or ordinal. For example to see if 
   there is an effect of owning a cat and having a cat allergy, or 
   gaming and daily exercise.
 
@@ -32,13 +32,13 @@ SLExplain.chi_square = function() {
   
   
   rownames(my_table)=c() #Declare row names with string which is ""
-  colnames(my_table)=c() #Declare columnnames with string which is ""
+  colnames(my_table)=c() #Declare column names with string which is ""
   
   chisq.test(my_table,
              correct=FALSE) #Does not apply Yates continuity correction
   
   
-  This setup will work most of the times, however, a assumption for
+  This setup will work most of the time, however, an assumption for
   running a Pearsons Chi Square test is that expected frequencies are
   not below 5.
   
@@ -51,8 +51,8 @@ SLExplain.chi_square = function() {
                               EXAMPLE
 ----------------------------------------------------------------------
 
-  We have studied 100 individuals who studies whilst listening
-  to music and 100 who studies in silence to see if they pass or
+  We have studied 100 individuals who study whilst listening
+  to music and 100 who study in silence to see if they pass or
   fail an exam. 
   
   my_table=matrix(c(78,         #Music, Pass
@@ -61,7 +61,7 @@ SLExplain.chi_square = function() {
                     32),        #Silence, Fail
                     nrow=2,     #Two rows in the table
                     byrow=TRUE) #This fills the table horizontally
-                                # -> ->, if FALSE, it fills vertical
+                                # -> ->, if FALSE, it fills vertically
   
   rownames(my_table)=c("Music",   #Set row names
                        "Silence")                              
@@ -88,19 +88,19 @@ SLExplain.chi_square = function() {
     X-squared = 2.5368, df = 1, p-value = 0.1112
     
   From a casual inspection of the data it would seem like those who
-  study with music passes more often, but there is not enough
+  study with music pass more often, but there is not enough
   evidence in this data to reject H0 as the p-value > 0.05.
   
 ----------------------------------------------------------------------
                             IMPORTANT
 ----------------------------------------------------------------------
   
-  When a Chi-Square test show a significant value it shows how two
+  When a Chi-Square test shows a significant value it shows how two
   variables are associated, however, it does not show that one of
   the variables causes the other.
   
   Owning a lighter can be associated with lung cancer due to smoking, 
-  however, lighters does not cause lung cancer.')
+  however, lighters do not cause lung cancer.')
   
   invisible(NULL)
 }

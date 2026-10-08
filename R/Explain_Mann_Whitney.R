@@ -20,14 +20,14 @@ SLExplain.mann_whitney_U = function() {
   Mann-Whitney U can be used as a non-parametric version of the 
   independent two-samples t-test. It is used when we want to
   investigate differences in two independent samples, for example
-  reaction times between two group or pain scores for two different
+  reaction times between two groups or pain scores for two different
   methods.
   
 ----------------------------------------------------------------------
                                 SETUP
 ----------------------------------------------------------------------
   
-  As this is a non parametric test, always control your data with
+  As this is a non-parametric test, always control your data with
   a normality test such as shapiro.test(), unless the data is ordinal.
   
   
@@ -53,7 +53,7 @@ SLExplain.mann_whitney_U = function() {
 ----------------------------------------------------------------------
 
   We want to investigate whether pain scores differ between two
-  seperate treatments for backpain. The data collected are ordinal
+  separate treatments for back pain. The data collected are ordinal
   so we chose to use Mann-Whitney U test.
   
   x=c(10,
@@ -116,7 +116,7 @@ SLExplain.mann_whitney_U = function() {
   Treatment A Treatment B 
           48          81
           
-  Treatment A appears to give a significantly lower painscore than
+  Treatment A appears to give a significantly lower pain score than
   Treatment B.
       ')
   

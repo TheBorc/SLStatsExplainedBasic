@@ -14,18 +14,19 @@ SLExplain.tukeys = function() {
 ======================================================================
 
 ----------------------------------------------------------------------
-                    WHY DO WE USE TUKES TEST?
+                    WHY DO WE USE TUKEYS TEST?
 ----------------------------------------------------------------------
 
-  We commonly use this test as a post-hoc following a significant
-  value from a One-Way ANOVA test. One-Way ANOVA tells us that there
-  is a difference of means between groups, whilst Tukeys invistigate
-  which groups differ.
+  We commonly use this test as a post-hoc following a statistically 
+  significant result from a One-Way ANOVA test. One-Way ANOVA tells 
+  us that there is a difference of means between groups, whilst 
+  Tukeys test investigates which groups differ.
+  
 ----------------------------------------------------------------------
                                 SETUP
 ----------------------------------------------------------------------
   
-  Since this is a post-hoc we rely in previously recorded data.
+  Since this is a post hoc we rely on previously recorded data.
   In this setup we use the data from SLExplain.ANOVA_one_way().
   
   TukeyHSD(aov(x~y,            
@@ -36,8 +37,8 @@ SLExplain.tukeys = function() {
 ----------------------------------------------------------------------
 
   We want to investigate if soil type has an effect on plant growth.
-  The soil types we wish to investigate is Sand, Clay and Compost,
-  these soils will be used grow tomato plants in. We use five pots
+  The soil types we wish to investigate are Sand, Clay and Compost.
+  These soils will be used grow tomato plants. We use five pots
   of each type of soil. The growth is measured in cm.
   
   The One-Way ANOVA that was conducted on the data set showed a
@@ -59,11 +60,11 @@ SLExplain.tukeys = function() {
   Sand-Compost  -12 -14.667864 -9.3321363 0.0000001
   
   We can see that padj shows a p-value > 0.05 between Sand and
-  Clay indicating a smaller difference than what ANOVA showed, 
-  however, when Compost is compared to both Sand and Clay it
-  shows a p-value < 0.001, which indicates that Compost has
-  a significantly larger effect on growth when compared to
-  Clay and Sand.
+  Clay indicating that the difference between sand and Clay is 
+  not statistically significant. However, when Compost is compared 
+  to both Sand and Clay it shows a p-value < 0.001, which indicates 
+  that Compost has a significantly larger effect on growth mean 
+  when compared to Clay and Sand.
 ')
   
   invisible(NULL)

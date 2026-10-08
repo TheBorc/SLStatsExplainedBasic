@@ -19,8 +19,8 @@ SLExplain.wilcoxon_paired = function() {
 
   Wilcoxon signed-rank test can be used as a non-parametric version 
   of the paired t-test. It is used when we want to investigate
-  the effects of for example an intervention on paired samples.
-  Before and after treatments with a drug, or the effect of a
+  the effects of, for example, an intervention on paired samples.
+  Such as before and after treatments with a drug, or the effect of a
   training regime on running speed.
   
   Note that one of the assumptions is that the difference does not 
@@ -30,8 +30,9 @@ SLExplain.wilcoxon_paired = function() {
                                 SETUP
 ----------------------------------------------------------------------
   
-  As this is a non parametric test, always control your data with
-  a normality test such as shapiro.test(), unless the data is ordinal.
+  As this is a non-parametric test, always control your data with
+  a normality test such as shapiro.test() if needed, unless the data 
+  is ordinal.
   
   
   x=c()                         #First measurement                         
@@ -45,7 +46,7 @@ SLExplain.wilcoxon_paired = function() {
               paired=TRUE)      #Treat data as paired
     
   
-  Going into approximation of the p-value instead of exact and why
+  Explaining approximation of the p-value instead of exact and why
   we do not apply continuity correction to the data is beyond the
   scope of this basic tutorial.
   
@@ -55,8 +56,8 @@ SLExplain.wilcoxon_paired = function() {
 
   We want to investigate whether a training regime has an effect
   on the 5 km running speed of 10 participants in minutes. After 
-  examining the difference, we noted that the data is non-normally 
-  distributed and have chosen to use Wilcoxon signed-rank test.
+  examining the difference, we noted that the data are non-normally 
+  distributed and have chosen to use the Wilcoxon signed-rank test.
   
   
   x=c(28.4,
@@ -81,7 +82,7 @@ SLExplain.wilcoxon_paired = function() {
       25.5,
       28.6)
     
-  CONTROL FOR NORMALITY IN DIFFERENCE:
+  CHECK FOR NORMALITY IN DIFFERENCE:
   shapiro.test(y-x)
   
     	Shapiro-Wilk normality test
@@ -89,7 +90,7 @@ SLExplain.wilcoxon_paired = function() {
   data:  y - x
   W = 0.75053, p-value = 0.003622
   
-  The difference seems to be non-normally distributed, the
+  The difference seems to be non-normally distributed. The
   Wilcoxon signed-rank test is appropriate.
   
   
@@ -106,7 +107,8 @@ SLExplain.wilcoxon_paired = function() {
   alternative hypothesis: true location shift is not equal to 0
   
   As the p-value < 0.05 we reject H0, there is a significant difference
-  between before and after going through the training regime.
+  in running times between before and after going through the training 
+  regime.
   
   
 ----------------------------------------------------------------------
@@ -114,12 +116,12 @@ SLExplain.wilcoxon_paired = function() {
 ----------------------------------------------------------------------
   
   One assumption for a Wilcoxon signed-rank test (paired) is a 
-  symmetrical distribution of the difference. To control this
+  symmetrical distribution of the difference. To check this
   assumption a simple histogram can be applied:
   
   hist(y-x)     #Create a histogram
   
-  If the data is non symmetrical it is more appropriate to use
+  If the data is asymmetrical it is more appropriate to use
   the sign test, which is explained in SLExplain.sign_test().
       ')
   

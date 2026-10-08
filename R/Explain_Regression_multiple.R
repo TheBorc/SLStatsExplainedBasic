@@ -172,7 +172,7 @@ SLExplain.Regression_multiple = function() {
   
   After creating a multiple regression model we see that age (y)
   has a p-value < 0.05 and remains significantly associated
-  to the variability in blood pressure when accounting for both
+  with the variability in blood pressure when accounting for both
   weight (z) and exercise (a) which have a p-value > 0.05.
   
   Multiple R-squared: 0.92 shows that the model explains 92% of
@@ -201,7 +201,7 @@ SLExplain.Regression_multiple = function() {
 ----------------------------------------------------------------------
 
   Note that correlation does not mean causation. Age is simply a
-  variable with a statistical significant predictor in our current 
+  variable with a statistically significant predictor in our current 
   model. Age does not cause a rise in blood pressure, but it can be 
   an explanation of why a data point shows high blood pressure in our
   model.

@@ -41,7 +41,7 @@ SLExplain.Dunns_test = function() {
 
   We want to investigate the recovery time for patients undergoing 
   three different treatments. The data is collected in number of days
-  and and Treatment C seem to be non-normally distributed. We chose
+  and Treatment C seems to be non-normally distributed. We chose
   to analyze with Kruskal-Wallis test.
   
   The Kruskal-Wallis test gave a significant difference between the
@@ -65,10 +65,10 @@ SLExplain.Dunns_test = function() {
   recovery time between Treatment A and Treatment C.
   
   
-  BONFERONNI CORRECTION:
+  BONFERRONI CORRECTION:
   
   It is generally a good idea to make corrections for multiple
-  comparisons to reduce the risk of commiting a Type I Error,
+  comparisons to reduce the risk of committing a Type I Error,
   or a False Positive. Bonferroni correction can accomplish this.
     
   library(FSA)

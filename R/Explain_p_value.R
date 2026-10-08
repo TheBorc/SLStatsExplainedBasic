@@ -1,6 +1,6 @@
 #' Explain p-values
 #'
-#' Prints and explenation of p-values, it's definition, interpretation, 
+#' Prints and explanation of p-values, it's definition, interpretation, 
 #' some misconceptions, and connection to hypothesis testing
 #'
 #' @return Invisibly returns NULL.
@@ -43,13 +43,13 @@ SLExplain.p_value = function() {
       A large p-value indicates a sample set that has a mean near the expected 
       true mean of the population.
       A large p-value would provide evidence supporting H0, however, it does
-      not prove the H0 to be true!
+      not prove H0 to be true!
       
       ----------------------------------------------------------------------
                               SIGNIFICANCE LEVELS
       ----------------------------------------------------------------------
       
-      A significance level (alpha) is most times chosen before conducting an 
+      A significance level (alpha) is most often chosen before conducting an 
       analysis.
       
       Most common choices are:
@@ -80,14 +80,15 @@ SLExplain.p_value = function() {
       H0 is true'.
       
       What it tells us is that there is a 3% chance of having a similarly
-      extreme result when testing a different sample of the same population.
+      extreme result when testing a different sample of the same population
+      if H0 is true.
       
       
       ----------------------------------------------------------------------
               STATISTICAL SIGNIFICANCE VS PRACTICAL SIGNIFICANCE
       ----------------------------------------------------------------------
       
-      A small p-value does not sgiw that an effect is large or practically
+      A small p-value does not show that an effect is large or practically
       important.
       
       With a very large sample, minor effects can produce a small p-value.
@@ -106,9 +107,9 @@ SLExplain.p_value = function() {
       
       A two-sided test considers H0 in both directions
       
-      A one-sided test considers H0 from on specified direction
+      A one-sided test considers H0 from one specified direction
       
-      Which mean that a two-sided tests checks for 'A change from H0'. 
+      Which means that a two-sided test checks for 'A change from H0'. 
       
       Whilst a one-sided test would check for example 'Is the result smaller 
       than H0' and would not consider a result larger than H0 to hold any 
@@ -130,7 +131,7 @@ SLExplain.p_value = function() {
         Data are not particularly inconsistent with H0. This does not mean
         that H0 is true.
         
-      Neither a small or large p-value serves as proof that H0 is true or 
+      Neither a small nor large p-value serves as proof that H0 is true or 
       false.")
   
   invisible(NULL)

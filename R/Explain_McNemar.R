@@ -17,10 +17,10 @@ SLExplain.mcnemar = function() {
                     WHY DO WE USE MCNEMARS TEST?
 ----------------------------------------------------------------------
 
-  We use this test when we want to study paired data and nominal data
-  This could be to control how same individuals responds to different
-  drugs, or investigate how the same individuals perform on exams
-  using different methods of studying.
+  We use this test when we want to study paired data and nominal data.
+  This could be to control how the same individuals responds to 
+  different drugs, or investigate how the same individuals perform on 
+  exams using different methods of studying.
 
 ----------------------------------------------------------------------
                                 SETUP
@@ -29,9 +29,9 @@ SLExplain.mcnemar = function() {
   my_table=matrix(c(),           #Setting up the table
                   nrow=,
                   byrow=TRUE)    #This fills the table horizontally
-                                 # -> ->, if FALSE, it fills vertical
+                                 # -> ->, if FALSE, it fills vertically
                             
-  rownames(my_table)=c()          #Adding rownames
+  rownames(my_table)=c()          #Adding row names
   colnames(my_table)=c()          #Adding column names
   
   mcnemar.test(my_table)
@@ -41,9 +41,9 @@ SLExplain.mcnemar = function() {
 ----------------------------------------------------------------------
 
   We have developed two methods of studying and recruited 50
-  individuals to evaluate the methods. They were given 2 seperate but
-  similar examss and applied Method A of studying for one exam and
-  Method B to study for the other exam. The criteria is Pass or Fail.
+  individuals to evaluate the methods. They were given 2 separate but
+  similar exams and applied Method A of studying for one exam and
+  Method B to study for the other exam. The criterion is Pass or Fail.
   
   my_table=matrix(c(20,
                     12,
@@ -67,8 +67,8 @@ SLExplain.mcnemar = function() {
       
       
   
-  We see that we get a p-value > 0.05 and we ratain H0, the two
-  methods developed appears to perform similarly to each other
+  We see that we get a p-value > 0.05 and we retain H0, the two
+  methods developed appear to perform similarly to each other
   when analysed using McNemars test.
   
   It is always good to control a table before trusting any tests.

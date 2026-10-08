@@ -26,8 +26,8 @@ SLExplain.ANOVA_repeat = function() {
                                 SETUP
 ----------------------------------------------------------------------
   
-  Instead of using rep() funciton you could write each coniditon and
-  each subject ID individual, but that will create a very large code
+  Instead of using rep() function you could write each condition and
+  each subject ID individually, but that will create a very large code
   and its good to start working on utilizing the rep() function.
   
   
@@ -39,7 +39,7 @@ SLExplain.ANOVA_repeat = function() {
 
   z=factor(c(rep(1:nr,                   #Make nominal values of
                  3)))                    #1 to "nr" of subjects
-                                         #They are repeated for ea
+                                         #They are repeated for each
                                          #Condition
   df=data.frame(x,
                 y,
@@ -57,12 +57,12 @@ SLExplain.ANOVA_repeat = function() {
 ----------------------------------------------------------------------
 
   We determined that Compost had a significantly different growth
-  rate than Clay or Soil, and we wish to investigate which environment
+  rate than Clay or Sand, and we wish to investigate which environment
   is most suitable for growth. We have decided to investigate indoors,
   outdoors and greenhouse environments. To conduct this test we have
   chosen six plants which will spend one day in each environment.
   
-  This can be alot to take in, so here is a breakdown of each variable:
+  This can be a lot to take in, so here is a breakdown of each variable:
   
   x - What are we measuring?
       Growth
@@ -102,6 +102,12 @@ SLExplain.ANOVA_repeat = function() {
   df=data.frame(x,
                 y,
                 z)
+                
+  
+  I highly recommend you that you check your df at this point if 
+  you are unsure about how we have set it up. Simply type "df" in 
+  the console or script and run to print the contents.
+  
 
   summary(aov(x~y+Error(z/y),   #ANOVA analysis, we measure
               data=df))         #x against y, Error(z/y) tells
@@ -126,7 +132,7 @@ SLExplain.ANOVA_repeat = function() {
       
   The p-value at 4.09e-05 is less than 0.05 and we can reject H0.
   There is a significant difference in the growth rate between the
-  various conditions, as such, we would like to invetstigate where
+  various conditions. As such, we would like to investigate where
   this difference is. We can do that with a pairwise t-test.
       
   Pairwise t-test is explained in SLExplain.t_test_pairwise()')
