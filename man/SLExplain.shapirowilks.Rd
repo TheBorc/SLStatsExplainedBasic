@@ -2,7 +2,7 @@
 % Please edit documentation in R/Explain_shapiro_wilks.R
 \name{SLExplain.shapirowilks}
 \alias{SLExplain.shapirowilks}
-\title{Explain Shapiro Wilks Normality test}
+\title{Explain Shapiro-Wilk Normality test}
 \usage{
 SLExplain.shapirowilks()
 }
@@ -10,6 +10,6 @@ SLExplain.shapirowilks()
 Invisibly returns NULL.
 }
 \description{
-Prints and explenation of Shapiro Wilks, it's definition,
+Prints an explanation of Shapiro-Wilk, it's definition,
 interpretation, examples and setup
 }

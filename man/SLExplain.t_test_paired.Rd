@@ -10,6 +10,6 @@ SLExplain.t_test_paired()
 Invisibly returns NULL.
 }
 \description{
-Prints and explenation of Paired sample t-test, it's definition,
+Prints an explanation of Paired sample t-test, it's definition,
 interpretation, examples and setup
 }

@@ -10,6 +10,6 @@ SLExplain.significance_level()
 Invisibly returns NULL.
 }
 \description{
-Prints and explenation of significance levels, it's definition,
+Prints an explanation of significance levels, it's definition,
 interpretation, some misconceptions, and connection to hypothesis testing
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/Explain_t_test_one_sample.R
 \name{SLExplain.t_test_one_sample}
 \alias{SLExplain.t_test_one_sample}
-\title{Explain t-test}
+\title{Explain one-sample t-test}
 \usage{
 SLExplain.t_test_one_sample()
 }
@@ -10,7 +10,6 @@ SLExplain.t_test_one_sample()
 Invisibly returns NULL.
 }
 \description{
-Prints and explenation of t-tests, it's definition,
-interpretation, some misconceptions, and connection to hypothesis testing
-Includes assumptions, examples and setup
+Prints an explanation of one-sample t-test, it's definition,
+interpretation, examples and setup
 }

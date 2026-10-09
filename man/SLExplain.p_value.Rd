@@ -10,6 +10,6 @@ SLExplain.p_value()
 Invisibly returns NULL.
 }
 \description{
-Prints and explenation of p-values, it's definition, interpretation, 
+Prints and explanation of p-values, it's definition, interpretation, 
 some misconceptions, and connection to hypothesis testing
 }

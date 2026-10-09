@@ -11,5 +11,5 @@ Invisibly returns NULL.
 }
 \description{
 Prints an explanation of Pairwise t-test (Multiple paired t-test),
-it's definition, interpretation, examples and setup
+it's definition, interpretation, examples and setup.
 }

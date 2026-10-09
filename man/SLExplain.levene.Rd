@@ -10,6 +10,6 @@ SLExplain.levene()
 Invisibly returns NULL.
 }
 \description{
-Prints and explenation of Levenes, it's definition,
+Prints and explanation of Levenes, it's definition,
 interpretation, examples and setup
 }
